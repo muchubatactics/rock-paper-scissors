@@ -14,7 +14,7 @@ function getComputerChoice()
     }
 }
 
-function capitalize(str)
+function capitalize( str )
 {
     str = str.toLowerCase();
     let temp = str.substr(0, 1);
@@ -23,7 +23,7 @@ function capitalize(str)
     return ( temp + str );
 }
 
-function playRound( playerSelection, computerSelection)
+function playRound( playerSelection, computerSelection )
 {
     playerSelection = capitalize( playerSelection );
 
@@ -36,11 +36,11 @@ function playRound( playerSelection, computerSelection)
     {
         if ( computerSelection === 'Paper' )
         {
-            return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+            return 0;
         }
         else
         {
-            return `You Win!! ${playerSelection} beats ${computerSelection}.`;
+            return 1;
         }
     }
     
@@ -48,11 +48,11 @@ function playRound( playerSelection, computerSelection)
     {
         if ( computerSelection === 'Scissor' )
         {
-            return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+            return 0;
         }
         else
         {
-            return `You Win!! ${playerSelection} beats ${computerSelection}.`;
+            return 1;
         }
     }   
 
@@ -60,11 +60,11 @@ function playRound( playerSelection, computerSelection)
     {
         if ( computerSelection === 'Rock' )
         {
-            return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+            return 0;
         }
         else
         {
-            return `You Win!! ${playerSelection} beats ${computerSelection}.`;
+            return 1;
         }
     }   
 }
@@ -78,5 +78,26 @@ function game()
     {
         playerSelection = prompt("Enter your choice", "rock, paper or scissor");
         computerSelection = getComputerChoice();
+
+        if ( playRound ( playerSelection, computerSelection ) === 1 )
+        {
+            decider++;
+            console.log("You Win this round!");
+        }
+        else 
+        {
+            console.log("You LOSE this round!");
+        }
+    }
+
+    if ( decider > 2 )
+    {
+        console.log("Yeyy, YOU WIN!!");
+    }
+    else
+    {
+        console.log("haha, LOSER!!");
     }
 }
+
+game();
