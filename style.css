@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-    font-size: 300%;
+    font-size: 400%;
     font-weight: lighter;
     font-family:'Courier New', Courier, monospace;
     margin: 0%;
@@ -59,7 +59,7 @@ h1 {
     flex:auto;
     align-items: center;
     justify-content: space-around;
-    font-size: 150%;
+    font-size: 200%;
     font-weight:300;
     font-family:'Courier New', Courier, monospace;
 }
@@ -74,13 +74,14 @@ h1 {
 
 .main p {
     margin: 0%;
+    margin-top: 20px;
     padding: 0%
 }
 
 .box {
     margin: 50px;
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
     border: 2px solid black;
     border-radius: 10px;
     display: flex;
@@ -95,17 +96,25 @@ h1 {
     align-items: center;
     padding-top: 5%;
     padding-bottom: 5%;
+    margin: 0;
 }
 
 .lower button {
     height: 50px;
     width: 200px;
+    font-size: large;
     background-color: cornsilk;
     border-radius: 5px;
     border: 0px;
 }
 
 .box > .text {
-    font-size: 1000%;
+    font-size: 600%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.humsel, .compsel {
+    font-size: 90%;
+    margin: 0px;
+    margin-bottom: 20px;
 }

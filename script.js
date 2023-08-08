@@ -4,16 +4,22 @@ let scoreMachine = 0;
 
 let [x, y] = document.querySelectorAll(".box > .text");
 
+let humanSelection = document.querySelector(".humsel");
+let compSelection = document.querySelector(".compsel");
+
 function getComputerChoice()
 {
     let choice = Math.floor(Math.random() * 3) + 1;
     switch (choice)
     {
         case 1:
+            compSelection.textContent = "Rock";
             return 'Rock';
         case 2:
+            compSelection.textContent = "Paper";
             return 'Paper';
         case 3:
+            compSelection.textContent = "Scissors";
             return 'Scissors'
     }
 }
@@ -30,7 +36,7 @@ function capitalize( str )
 function playRound( playerSelection, computerSelection )
 {
     playerSelection = capitalize( playerSelection );
-    console.log(playerSelection);
+    humanSelection.textContent = playerSelection;
 
     if ( playerSelection === computerSelection )
     {
