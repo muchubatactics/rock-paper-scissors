@@ -1,4 +1,8 @@
 console.log("hello word");
+let scoreHuman = 0;
+let scoreMachine = 0;
+
+let [x, y] = document.querySelectorAll(".box > .text");
 
 function getComputerChoice()
 {
@@ -26,78 +30,61 @@ function capitalize( str )
 function playRound( playerSelection, computerSelection )
 {
     playerSelection = capitalize( playerSelection );
+    console.log(playerSelection);
 
     if ( playerSelection === computerSelection )
     {
-        return "It's a draw!";
+        return;
     }
     
     if ( playerSelection === 'Rock' )
     {
         if ( computerSelection === 'Paper' )
         {
-            return 0;
+            y.textContent = String(++scoreMachine);
+            return;
         }
         else
         {
-            return 1;
+            x.textContent = String(++scoreHuman);
+            return ;
         }
     }
     
     if ( playerSelection == 'Paper' )
     {
-        if ( computerSelection === 'Scissor' )
+        if ( computerSelection === 'Scissors' )
         {
-            return 0;
+            y.textContent = String(++scoreMachine);
+            return;
         }
         else
         {
-            return 1;
+            x.textContent = String(++scoreHuman);
+            return;
         }
     }   
 
-    if ( playerSelection == 'Scissor' )
+    if ( playerSelection == 'Scissors' )
     {
         if ( computerSelection === 'Rock' )
         {
-            return 0;
+            y.textContent = String(++scoreMachine);
+            return;
         }
         else
         {
-            return 1;
+            x.textContent = String(++scoreHuman);
+            return;
         }
     }   
 }
 
-function game()
-{
-    let decider = 0;
-    let playerSelection; 
-    let computerSelection; 
-    for ( let i = 0; i < 5; i++ )
-    {
-        playerSelection = prompt("Enter your choice", "rock, paper or scissor");
-        computerSelection = getComputerChoice();
-
-        if ( playRound ( playerSelection, computerSelection ) === 1 )
-        {
-            decider++;
-            console.log("You Win this round!");
-        }
-        else 
-        {
-            console.log("You LOSE this round!");
-        }
-    }
-
-    if ( decider > 2 )
-    {
-        console.log("Yeyy, YOU WIN!!");
-    }
-    else
-    {
-        console.log("haha, LOSER!!");
-    }
-}
-
-game();
+let btns = Array.from(document.querySelectorAll("button"));
+console.log(btns);
+btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        console.log("here");
+        playRound(btn.textContent, getComputerChoice());
+    });
+});
