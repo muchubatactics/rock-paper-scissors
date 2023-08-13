@@ -118,3 +118,12 @@ h1 {
     margin: 0px;
     margin-bottom: 20px;
 }
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    color: red;
+}
